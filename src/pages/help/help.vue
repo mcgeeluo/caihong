@@ -10,18 +10,22 @@
                 <div class="helpTabs">
                     <ul>
                         <li v-for="(value,index) in tabs" :key="index" @click="handel(value,index)">
-                            <div class="helpItem">
+                            <p class="helpItem">
                                 <span>{{value.title}}</span>
                                 <span class="navCeter">2</span>
-                            </div>  
+                            </p>  
                         </li>
                     </ul>
                     <div class="section">
-                        <div>
-                            <ul>
-                                <li v-for="(v,i) in helpTips" :key="i">{{v.title}}</li>
-                            </ul>
-                        </div>
+                        <ul>
+                            <li v-for="(v,i) in caip" :key="i">
+                                <p class="anser">
+                                    <span class="que">{{i+1}}</span>
+                                    <span class="queTitle">{{v.title}}</span>
+                                </p>
+                                <p v-show="isShow">{{v.message}}</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -42,6 +46,7 @@ export default {
             terms:'',
             caip:'',
             aboutMe:'',
+            isShow:false,
             tabs:[
                 {
                     title:'彩票常见问题',
@@ -98,11 +103,13 @@ export default {
 .help{
     .helpBox{
         width: 100%;
-        height: 100%;
+        height:900px;
         margin:auto;
+        background: url('../../assets/img/about_bg.jpg') no-repeat;
+        background-size: 100%  100%;
         .helpMain{
             height: 100%;
-            left: 26%;
+            left: 20%;
             .mainTitle{
                 width: 750px;
                 height: 50px;
@@ -122,21 +129,65 @@ export default {
                 }
             }
             .helpTabs{
+                width: 100%;
+                height: 100%;
                 position: absolute;
-                top: 38%;
-                left: 20%;
+                top: 56%;
+                left: 6%;
+                >ul,>li{
+                    width: 15%;
+                }
                 .helpItem{
+                    // position: absolute;
                     margin-top: 30px;
+                    // width: 56%;
+                    >span{
+                       
+                    }
                     .navCeter{
                         float: right;
                         margin-left: 50px;
                     }
                 }
-                
                 .section{
-                    left: 150%;
-                    top: -294px;
+                    width: 70%;
+                    height: 100%;
+                    left: 20%;
+                    top:-100%;
+                    // background-color:#ffe6e6;
+                    background:#ffe6e6; 
+                    filter:Alpha(opacity=60);
                     position: relative;
+                    border-radius: 18px;
+                    >ul,>li{
+                        // position: absolute;
+                        top:-90%;
+                        width: 90%;
+                        margin-left: 30px;
+                        height: 30px;
+                        border:1px;
+                        .anser{
+                            // margin-top: 30px;
+                            line-height: 40px;
+                            font-size: 14px;
+                            border-radius: 3px;
+                            margin-bottom: 30px;
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid #000;
+                            background: #fff2f2;
+                            .que{
+                                display: inline-block;
+                                width: 20px;
+                                height: 20px;
+                                line-height: 20px;
+                                margin-left: 20px;
+                                text-align: center;
+                                color:white;
+                                background: #ccffcc;
+                            }
+                        }
+                    }
                 }
                 
             }

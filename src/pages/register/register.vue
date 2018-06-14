@@ -146,22 +146,24 @@ export default {
         width: 100%;
         height: 100%;
         background: url('../../assets/img/reg_bg-min.png') no-repeat;
+        background-size: 100% 100% ;
         position: relative;
         margin: auto;
         text-align: center;
         .loginMain{
-            width: 500px;
+            // width: 500px;
             height:900px;
             position: absolute;
             top:80px;
-            left:700px;
+            left:30%;
             .logo{
                 width: 100%;
                 border-bottom: 1px solid #ECECEC;
                 padding-bottom: 10px;
                 >img{
-                    width: 50%;
-                    height: 50%;
+                    // width: 50%;
+                    // height: 50%;
+                    max-width:34%;overflow:hidden;
                 }
                 >span{
                     color: #BABABA;
@@ -175,7 +177,7 @@ export default {
                 width: 100%;
                 // height: 100%;
                 .user,.pass,.passA,.yzm,.waringText{
-                    width:540px;
+                    width:100%;
                     height: 42px;
                     position: relative;
                     >span{
@@ -184,7 +186,7 @@ export default {
                         text-align: left;
                     }
                     >input{
-                        width: 305px;
+                        width: 60%;
                         height: 42px;
                         border: none;
                         outline: none;
@@ -198,7 +200,7 @@ export default {
                 .yzm{
                     margin-left: 10px;
                     >input{
-                      width: 200px; 
+                      width: 40%; 
                     }
                     >span>img{
                         vertical-align: middle;
@@ -221,7 +223,7 @@ export default {
                         text-align: left;
                         color: #999999;
                         top: 30px;
-                        left: 180px;
+                        left: 32%;
                         position: absolute;
                         font-size: 12px;
                 }
@@ -246,7 +248,7 @@ export default {
                 }
             }
             .btnRegister{
-                width: 390px;
+                width: 70%;
                 height: 40px;
                 background-color: #0CCC9D;
                 border-radius: 5px;
@@ -254,7 +256,7 @@ export default {
                 line-height: 40px;
                 position: absolute;
                 top: 56%;
-                left: 20%;
+                left: 16%;
                 cursor: pointer;
                 >span{
                     color: white;
@@ -263,7 +265,7 @@ export default {
             .bLogin{
                 position: absolute;
                 top:66%;
-                right: 0;
+                right: 8%;
                 >span{
                     font-size: 14px;
                     cursor: pointer;

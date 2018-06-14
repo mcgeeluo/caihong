@@ -34,7 +34,7 @@ export default {
 .helpNav{
     height: 30px;
     position: absolute;
-    left:26%;
+    left:20%;
     >ul>li{
         width: 92px;
         height: 52px;
