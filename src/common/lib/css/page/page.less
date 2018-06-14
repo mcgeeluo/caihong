@@ -1,0 +1,33 @@
+// page
+.page{
+  .ft(14px);
+  input{
+    .txt(center);
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    .bd(1px, @colorC);
+    outline: inherit;
+    .pos(relative);
+    top: -2px;
+  }
+  span{
+    &.sp{
+      .dis(inline-block);
+      .cur;
+      .txt(center);
+      width: 50px;
+      height: 30px;
+      line-height: 30px;
+      .bd(1px, @colorF5);
+      &:hover{
+        .bgcolor(@colorF5h);
+        .bd(1px, @colorF5h);
+        .color(@colorF)
+      }
+    }
+  }
+  b{
+    font-weight: 100;
+  }
+}
