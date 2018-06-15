@@ -10,6 +10,7 @@
                     <i class=""></i>
                     <input type="text" placeholder="用户名" class="userName" v-model="name" v-on:keyup.enter='login'>
                 </div>
+                
                 <div class="userNameBox">
                     <i></i>
                     <input type="password" placeholder="请输入密码" class="pwd" v-model="pass" v-on:keyup.enter='login'>
@@ -17,6 +18,7 @@
                 <div class="wraningBox">
                     <p class="wraning" v-text="login_pass_error"></p>
                 </div>
+
                 <div class="userNameBox" v-show="isCaptcha">
                     <i></i>
                     <input type="text" class="yzm" placeholder="验证码" v-model="yanzCode" v-on:keyup.enter='login'>
@@ -25,6 +27,7 @@
                 <div class="wraningBox" v-show="isCaptcha">
                     <p class="wraning" v-text="login_pass_error"></p>
                 </div>
+
                 <div class="userNameBox btn" @click="login" > 
                     <span>立即登录</span>
                 </div>
@@ -98,7 +101,8 @@ export default {
             margin-top: 5%;
             // border-bottom: 1px solid #ECECEC;
             >img{
-                max-width:34%;overflow:hidden;
+                max-width:16%;
+                overflow:hidden;
             }
             >span{
                 display: inline-block;
@@ -183,6 +187,7 @@ export default {
             }
             .try{
                 background: url('../../assets/img/regtag_bg.png') no-repeat;
+                background-size: 100% 100% ;
                 margin-top: 30px;
                 text-align: center;
                 line-height: 1px;
