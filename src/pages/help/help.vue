@@ -22,13 +22,13 @@
                     </ul>
                     <div class="section">
                         <ul>
-                            <li v-for="(v,i) in caip" :key="i" @click="changShow(i)">
+                            <li v-for="(v,i) in caip" :key="i" @click="changShow(i,v)">
                                 <p class="anser">
                                     <span class="que">{{i+1}}</span>
                                     <span class="queTitle">{{v.title}}</span>
                                     <span class="icons"></span>
                                 </p>
-                                <p v-show="isShow" class="showMsg">{{v.message}}</p>
+                                <p  class="showMsg fadeHide" :class="{active:active ==i}">{{v.message}}</p>
                             </li>
                         </ul>
                     </div>
@@ -51,6 +51,7 @@ export default {
             terms:'',
             caip:'',
             aboutMe:'',
+            active:0,
             isShow:false,
             tabs:[
                 {
@@ -94,9 +95,8 @@ export default {
             this.eng = value.eng;
         },
 
-        changShow(index){
+        changShow(i,v){
             this.isShow  = !this.isShow;
-            
         }
     },
     mounted(){
@@ -123,7 +123,7 @@ export default {
             .mainTitle{
                 width: 750px;
                 height: 50px;
-                top: 100px;
+                top: -84%;
                 margin: auto;
                 position: relative;
                 .titleVa{
@@ -188,9 +188,9 @@ export default {
                             background: #F5F5F5;
                             .icons{
                                 display: inline-block;
-                                border-left: 10px solid transparent;
-                                border-right: 10px solid transparent;
-                                border-top: 10px solid #000;
+                                border-left: 8px solid transparent;
+                                border-right: 8px solid transparent;
+                                border-top: 8px solid #000;
                                 float: right;
                                 margin-right: 20px;
                                 margin-top: 16px;
@@ -210,6 +210,9 @@ export default {
                             margin: 0 0 3% 3%; 
                             padding: 10px 0 10px 0;
                         }
+                    }
+                    .fadeHide{
+                        display: none;
                     }
                 }
                 
