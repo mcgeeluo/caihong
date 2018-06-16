@@ -10,6 +10,7 @@
                     <i class=""></i>
                     <input type="text" placeholder="用户名" class="userName" v-model="name" v-on:keyup.enter='login'>
                 </div>
+                
                 <div class="userNameBox">
                     <i></i>
                     <input type="password" placeholder="请输入密码" class="pwd" v-model="pass" v-on:keyup.enter='login'>
@@ -17,6 +18,7 @@
                 <div class="wraningBox">
                     <p class="wraning" v-text="login_pass_error"></p>
                 </div>
+
                 <div class="userNameBox" v-show="isCaptcha">
                     <i></i>
                     <input type="text" class="yzm" placeholder="验证码" v-model="yanzCode" v-on:keyup.enter='login'>
@@ -25,6 +27,7 @@
                 <div class="wraningBox" v-show="isCaptcha">
                     <p class="wraning" v-text="login_pass_error"></p>
                 </div>
+
                 <div class="userNameBox btn" @click="login" > 
                     <span>立即登录</span>
                 </div>
@@ -85,27 +88,28 @@ export default {
     position: relative;
     margin: auto;
     text-align: center;
-    background: url('../../assets/img/login_bg-min.png') no-repeat;
+    background: url('../../assets/img/login_bg-min.png') no-repeat ;
+    background-size: 100% 100% ;
     .login{
         position: absolute;
-        width: 660px;
-        height: 280px;
-        top:200px;
-        left:610px;
+        width: 50%;
+        // height: 28%;
+        top:17%;
+        left:25%;
         >p{
             width: 100%;
-            margin-top: 10px;
-            border-bottom: 1px solid #ECECEC;
+            margin-top: 5%;
+            // border-bottom: 1px solid #ECECEC;
             >img{
-                width: 246px;
-                height:96px;
+                max-width:16%;
+                overflow:hidden;
             }
             >span{
                 display: inline-block;
                 width: 100%;
                 height: 30px;
                 margin-top: 10px;
-                font-size: 22px;
+                font-size: 2em;
                 color: #81DDCD  
             }
         }
@@ -115,7 +119,7 @@ export default {
             margin: auto;
             
             .userNameBox{
-                width:@boxWidth;
+                width:56%;
                 height: @boxHeight;
                 background-color: #ECECEC;
                 border-radius: 5px;
@@ -172,8 +176,7 @@ export default {
                 }
             }
             .wraningBox,.try{
-                width:@boxWidth;
-                // height: @boxHeight;
+                width:50%;
                 margin:auto;
             }
             .wraning{
@@ -184,21 +187,22 @@ export default {
             }
             .try{
                 background: url('../../assets/img/regtag_bg.png') no-repeat;
+                background-size: 100% 100% ;
                 margin-top: 30px;
                 text-align: center;
                 line-height: 1px;
                 >span{
                     display: inline-block;
-                    margin-left: 30px;
+                    // margin-left: 30px;
                     color: #B8B8B8;
-                    font-size: 14px;
+                    // font-size: 14px;
                     cursor: pointer;
                 }
             }
         }
         .tab{
-            width: 100%;
-            text-align: left;
+            width: 80%;
+            margin-top: 10%;
             >span{
                 display: inline-block;
                 margin-left: 20px;

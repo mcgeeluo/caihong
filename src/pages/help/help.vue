@@ -3,25 +3,34 @@
         <div class="helpBox">
             <helpNav></helpNav>
             <div class="helpMain">
+                <div class="mainTitle" v-show="this.title == '' ">
+                    <h1 class="titleVa" >彩票常见问题</h1>
+                    <h5 class="titleEng">QUESTION</h5>
+                </div>
                 <div class="mainTitle">
-                    <h1 class="titleVa">{{title}}</h1>
+                    <h1 class="titleVa" >{{title}}</h1>
                     <h5 class="titleEng">{{eng}}</h5>
                 </div>
                 <div class="helpTabs">
                     <ul>
                         <li v-for="(value,index) in tabs" :key="index" @click="handel(value,index)">
-                            <div class="helpItem">
+                            <p class="helpItem">
                                 <span>{{value.title}}</span>
-                                <span class="navCeter">2</span>
-                            </div>  
+                                <span class="navCeter"><i></i></span>
+                            </p>  
                         </li>
                     </ul>
                     <div class="section">
-                        <div>
-                            <ul>
-                                <li v-for="(v,i) in helpTips" :key="i">{{v.title}}</li>
-                            </ul>
-                        </div>
+                        <ul>
+                            <li v-for="(v,i) in caip" :key="i" @click="changShow(i)">
+                                <p class="anser">
+                                    <span class="que">{{i+1}}</span>
+                                    <span class="queTitle">{{v.title}}</span>
+                                    <span class="icons"></span>
+                                </p>
+                                <p v-show="isShow" class="showMsg">{{v.message}}</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -42,6 +51,7 @@ export default {
             terms:'',
             caip:'',
             aboutMe:'',
+            isShow:false,
             tabs:[
                 {
                     title:'彩票常见问题',
@@ -82,6 +92,11 @@ export default {
         handel(value,index){
             this.title = value.title;
             this.eng = value.eng;
+        },
+
+        changShow(index){
+            this.isShow  = !this.isShow;
+            
         }
     },
     mounted(){
@@ -98,11 +113,13 @@ export default {
 .help{
     .helpBox{
         width: 100%;
-        height: 100%;
+        height:900px;
         margin:auto;
+        background: url('../../assets/img/about_bg.jpg') no-repeat;
+        background-size: 100%  100%;
         .helpMain{
             height: 100%;
-            left: 26%;
+            left: 20%;
             .mainTitle{
                 width: 750px;
                 height: 50px;
@@ -122,21 +139,78 @@ export default {
                 }
             }
             .helpTabs{
+                width: 100%;
+                height: 100%;
                 position: absolute;
-                top: 38%;
-                left: 20%;
+                top: 56%;
+                left: 6%;
+                >ul,>li{
+                    width: 15%;
+                }
                 .helpItem{
+                    position: relative;
+                    top: -96px;
                     margin-top: 30px;
+                    width: 300px;
+                    >span{
+                       
+                    }
                     .navCeter{
                         float: right;
                         margin-left: 50px;
                     }
                 }
-                
                 .section{
-                    left: 150%;
-                    top: -294px;
-                    position: relative;
+                    width: 70%;
+                    height: 100%;
+                    left: 20%;
+                    top:-15%;
+                    clear: both;
+                    background:#F1FBFD; 
+                    position: absolute;
+                    border-radius: 18px;
+                    >ul,>li{
+                        // position: absolute;
+                        top:-90%;
+                        width: 90%;
+                        margin-left: 30px;
+                        height: 30px;
+                        border:1px;
+                        .anser,.showMsg{
+                            // margin-top: 30px;
+                            line-height: 40px;
+                            font-size: 14px;
+                            border-radius: 3px;
+                            margin: 30px 0 0 36px;
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid #DDDDDD;
+                            background: #F5F5F5;
+                            .icons{
+                                display: inline-block;
+                                border-left: 10px solid transparent;
+                                border-right: 10px solid transparent;
+                                border-top: 10px solid #000;
+                                float: right;
+                                margin-right: 20px;
+                                margin-top: 16px;
+                            }
+                            .que{
+                                display: inline-block;
+                                width: 20px;
+                                height: 20px;
+                                line-height: 20px;
+                                margin-left: 20px;
+                                text-align: center;
+                                color:white;
+                                background: #85C4B7;
+                            }
+                        }
+                        .showMsg{
+                            margin: 0 0 3% 3%; 
+                            padding: 10px 0 10px 0;
+                        }
+                    }
                 }
                 
             }
